@@ -5,7 +5,7 @@
 <xacro:macro name="set_environment" params="package_name:='circuit' ">
   <xacro:property name="package_name" value="${package_name}" scope="global"/>  
 </xacro:macro>
-
+<!-- <xacro:include filename="$(find circuit)/src/urdf/materials.xacro" /> -->
 <!-- ===================== Wheel xacro =========================================
 
   Xacro to create a wheel link and the respective joint. For more detail information and usage, see:
@@ -23,11 +23,8 @@
                
                
                
-               
-               
-               
   <xacro:macro name="wheel"
-               params="prefix reflect wheel_props base_props mesh:='' ">
+               params="prefix reflect wheel_props wheel_color base_props mesh:='' ">
 
   <xacro:property name="pos_x_joint"
      value="${(base_props['base']['x_size']/2) - wheel_props['wheel']['x_offset']}"/>
@@ -42,6 +39,8 @@
          <geometry>
         <mesh filename="package://${package_name}/meshes/${robot_name}/${mesh}" />
         </geometry>
+
+
       </visual>
     </xacro:if>
     <xacro:if value="${mesh == '' }" >
@@ -50,7 +49,7 @@
          <geometry>
          <cylinder radius="${wheel_props['wheel']['radius']}" length="${wheel_props['wheel']['length']}"/>
         </geometry>
-        <material name="red"/>
+
       </visual>  
     </xacro:if>
       <collision>
@@ -64,6 +63,10 @@
                               l="${wheel_props['wheel']['length']}">
       </xacro:cylinder_inertia> 
     </link>
+
+    <gazebo reference="${prefix}_wheel"> 
+    <material>Gazebo/${wheel_color}</material> 
+    </gazebo> 
 
     <joint name="${prefix}_wheel_joint" type="continuous">
       <axis xyz="0 1 0" rpy="0 0 0" />
@@ -87,7 +90,7 @@
 
 
    <xacro:macro name="camera"
-               params="cam_height cam_rot_y">
+               params="robot_index cam_height cam_rot_y">
   <link name="camera_link">
     <collision>
       <origin xyz="0 0 ${cam_height}" rpy="0 ${cam_rot_y} 0"/>
@@ -100,10 +103,10 @@
       <origin xyz="0 0 ${cam_height}" rpy="0 ${cam_rot_y} 0"/>
       <geometry>
     <box size="0.1 0.1 0.1"/>
+
       </geometry>
-      <material name="Red">
-         <color rgba="1.0 0.0 0.0 1.0"/>
-        </material>
+      
+      
     </visual>
 
     <inertial>
@@ -147,7 +150,7 @@
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
         <updateRate>0.0</updateRate>
-        <cameraName>rrbot/camera1</cameraName>
+        <cameraName>robot_${robot_index}/camera1</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>
         <frameName>camera_link</frameName>
@@ -181,9 +184,7 @@
       <geometry>
     <box size="0.05 0.05 0.05"/>
       </geometry>
-       <material name="Cyan">
-         <color rgba="0 1.0 1.0 1.0"/>
-        </material>
+       <!-- <material>Gazebo/Red</material> -->
     </visual>
 
     <inertial>
@@ -235,7 +236,7 @@
          <gaussianNoise>0.005</gaussianNoise>
          <alwaysOn>true</alwaysOn>
          <updateRate>50</updateRate>
-         <topicName>sensor_${robot_index}/${prefix}_ir_front</topicName>
+         <topicName>robot_${robot_index}/sensor_${prefix}_ir</topicName>
          <frameName>base_ir_front</frameName>
          <radiation>INFRARED</radiation>
          <fov>0.2967</fov>
@@ -243,7 +244,10 @@
    </sensor>  
    </gazebo>
 
+<!-- <gazebo reference="${prefix}_sensor_link">
 
+    <material>Gazebo/Red</material>
+  </gazebo> -->
 </xacro:macro>
 <!-- ======================================================================= -->
 
@@ -268,7 +272,7 @@
                 <mesh filename="package://${package_name}/meshes/${robot_name}/${wheel_props['base']['mesh']}" />
             </geometry>
             <!-- xacro:insert_block name="material_silver" / TODO use this block? -->
-            <material name="silver"/>
+            <!-- <material>Gazebo/Red</material> -->
         </visual>
       </xacro:if>
       <xacro:if value="${wheel_props['base']['mass'] == '' }" >
@@ -277,7 +281,7 @@
           <geometry>
             <box size="${wheel_props['base']['size']['x']} ${wheel_props['base']['size']['y']} ${wheel_props['base']['size']['z']}" />
           </geometry>
-          <material name="red"/>
+          <!-- <material>Gazebo/Red</material> -->
         </visual>
       </xacro:if>
       <collision>
@@ -296,7 +300,7 @@
       <dynamics damping="0.01" friction="0.0"/>
     </joint>
     <gazebo reference="${prefix}_caster_base_link">
-      <material>Gazebo/Grey</material>
+      <!-- <material>Gazebo/Red</material> -->
     </gazebo>
 
 
@@ -317,7 +321,7 @@
             <mesh filename="package://${package_name}/meshes/${robot_name}/${wheel_props['hub']['mesh']}" />
           </geometry>
           <!-- xacro:insert_block name="material_silver" / TODO use this block? -->
-          <material name="silver"/>
+          <!-- <material>Gazebo/Red</material> -->
         </visual>
       </xacro:if>
       <xacro:if value="${wheel_props['hub']['mesh'] == '' }" >
@@ -326,7 +330,7 @@
           <geometry>
             <box size="${wheel_props['hub']['size']['x']} ${wheel_props['hub']['size']['y']} ${wheel_props['hub']['size']['z']}" />
           </geometry>
-          <material name="red"/>
+          <!-- <material>Gazebo/Red</material> -->
         </visual>
       </xacro:if>
       <collision>
@@ -345,7 +349,7 @@
       <dynamics damping="0.01" friction="0.0"/>
     </joint>
     <gazebo reference="${prefix}_caster_rotation_link">
-      <material>Gazebo/Grey</material>
+      <!-- <material>Gazebo/Red</material> -->
     </gazebo>
 
 
@@ -362,8 +366,8 @@
           <geometry>
             <mesh filename="package://${package_name}/meshes/${robot_name}/${wheel_props['wheel']['mesh']}" />
           </geometry>
-          <!-- TODO use this?: xacro:insert_block name="material_dark_grey" /-->
-          <material name="material_dark_grey"/>
+          <!-- TODO use this?: xacro:insert_block name="material_dark_red" /-->
+          <!-- <material>Gazebo/Red</material> -->
         </visual>
       </xacro:if>
       <xacro:if value="${wheel_props['wheel']['mesh'] == '' }" >
@@ -372,7 +376,10 @@
           <geometry>
             <cylinder length="${wheel_props['wheel']['length']}" radius="${wheel_props['wheel']['radius']}" />
           </geometry>
-          <material name="red"/>
+          <material name="Cyan">
+         <color rgba="0 1.0 1.0 1.0"/>
+       </material>
+          <!-- <material>Gazebo/Red</material> -->
         </visual>
       </xacro:if>
       <collision>
@@ -390,7 +397,7 @@
       <axis xyz="0 1 0" />
     </joint>
     <gazebo reference="${prefix}_caster_wheel_link">
-      <material>Gazebo/DarkGrey</material>
+      <!-- <material>Gazebo/Red</material> -->
     </gazebo>
   </xacro:macro>
 
@@ -414,11 +421,11 @@
                        z="${base_prop['base']['z_size']}"> 
     </xacro:box_inertia>
       <visual>
-        <origin xyz="0 0 0.1" rpy="0 0 1.57"/>
+        <origin xyz="0.03 0 0.1" rpy="0 0 1.57"/>
         <geometry>
-          <mesh filename="package://circuit/src/urdf/car_blender.dae" scale="0.2 0.2 0.2"/>
+          <mesh filename="package://circuit/src/urdf/meshes/car_blender.dae" scale="0.19 0.2 0.2"/>
         </geometry>
-        <material name="white" />
+        <!-- <material>Gazebo/Red</material> -->
       </visual>
     <collision>
       <origin xyz="0 0 0.09" rpy="0 0 0"/>
@@ -499,9 +506,6 @@
 <!-- 
 
 
-
-
-
 ===================== Sphere intertia xacro ===============================
 
   Xacro with the intertial block of a sphere. For more detail information and usage, see:
@@ -539,14 +543,14 @@
   RVIZ material RGBA definition.
 -->
 
-  <material name="blue">
+  <!-- <material name="blue">
     <color rgba="0 0 0.8 1"/>
   </material>
   <material name="black">
-    <color rgba="0 0 0 1"/>
+    <color rgba="0 0 0 1.0"/>
   </material>
   <material name="white">
-    <color rgba="1 1 1 1"/>
+    <color rgba="1.0 1.0 1.0 1.0"/>
   </material>
   <material name="red">
     <color rgba="0.8 0.4 0.8 1.0"/>
@@ -554,9 +558,9 @@
   <material name="silver">
     <color rgba="0.79 0.82 0.93 1"/>
   </material>
-  <material name="material_dark_grey">
+  <material name="material_dark_red">
     <color rgba="0.3 0.3 0.3 1"/>
-  </material>
+  </material> -->
 <!-- ========================================================================-->
 
 
