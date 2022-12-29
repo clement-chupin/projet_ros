@@ -119,19 +119,12 @@ class Race_manager:
             print("les rouges gagnes")
 
 
-        
-        
         filename = 'savedImage.png'
         circuit_path = rospack.get_path('circuit')
         # Using cv2.imwrite() method
         # Saving the image
         cv2.imwrite(circuit_path+"/src/nodes/images/"+filename, cv2_img)
-        if False:
-            self.finish = True
-            if False:
-                self.blue_win = True
-            else:
-                self.blue_win = False
+
                 
     def pub_image(self,):
 

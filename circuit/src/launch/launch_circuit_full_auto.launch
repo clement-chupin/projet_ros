@@ -31,9 +31,6 @@
 
 
 
-  <node respawn="true" pkg="circuit" output="screen" ns="/circuit"
-      type="circuit_manager.py" name="circuit_manager" >
-  </node>
 
 
 
@@ -59,4 +56,7 @@
 
 
 
+  <node respawn="true" pkg="circuit" output="screen" ns="/circuit"
+      type="circuit_manager.py" name="circuit_manager" >
+  </node>
 </launch>

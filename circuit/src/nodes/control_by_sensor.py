@@ -16,25 +16,22 @@ class Controlleur:
     def callback_left(self,data):
         self.range_left = data.range
 
-
     def call_service(self,):
 
         savoir_si_la_course_commence = rospy.ServiceProxy("/circuit/start_the_race",StartRace)
         resp = savoir_si_la_course_commence()
-
-
         self.start = resp.result
  
 
-    def move_test(self):
+    def control_sensor(self):
         # Create a publisher which can "talk" to Turtlesim and tell it to move
         pub = rospy.Publisher(str('/robot_'+str(self.robot_index)+'/cmd_vel'), Twist, queue_size=1)
 
         move_cmd = Twist()
-        rate = rospy.Rate(1)
+        rate = rospy.Rate(5)
 
         while True:
-            print(self.start)
+            #print(self.start)
             if self.start:
                 move_cmd.angular.z = 0
                 move_cmd.linear.x = 0
@@ -45,17 +42,9 @@ class Controlleur:
                 if self.range_front > 0.5:
                     move_cmd.linear.x = 0.4
 
-
-                print("sensor :")
-                print(self.range_right,self.range_left)
-                print("move :")
-
-                print(move_cmd.linear.x,move_cmd.angular.z)
-                
                 pub.publish(move_cmd)
             self.call_service()
             rate.sleep()
-
 
     def __init__(self):
         self.range_front =0
@@ -75,8 +64,7 @@ class Controlleur:
         rospy.Subscriber('/robot_'+str(self.robot_index)+'/sensor_right_ir', Range, self.callback_right)
         # rospy.Subscriber("/camera/rgb/image_raw", Image, image_callback)
 
-
-        self.move_test()
+        self.control_sensor()
         
         rospy.spin()
 
