@@ -28,7 +28,7 @@ class Controlleur:
         # Create a publisher which can "talk" to Turtlesim and tell it to move
         
         move_cmd = Twist()
-
+        #print(msg)
         if self.start:
             
             
@@ -51,7 +51,7 @@ class Controlleur:
 
         
 
-        rospy.init_node("control_the_bot", anonymous=True)
+        rospy.init_node("control_by_joy", anonymous=True)
 
         self.node_name = rospy.get_name()
 

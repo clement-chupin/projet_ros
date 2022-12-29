@@ -23,11 +23,11 @@ import os
 class Race_manager:
     def start_race(self,req):
 
-        if rospy.get_time() - self.init_time > self.wait_before_race:
+        if rospy.get_time() - self.init_time > self.wait_before_race and not(self.finish):
             
-            return StartRaceResponse(bool(True))
+            return StartRaceResponse(True)
         else:
-            return StartRaceResponse(bool(False))
+            return StartRaceResponse(False)
                
     def get_image(self,time_left):
         photo_name = "lena"
@@ -37,27 +37,29 @@ class Race_manager:
             else:
                 photo_name = "red_win"
         else:
-            print(time_left)
-            if time_left < 9 and time_left > 9:
+            
+            if time_left < 9 and time_left > 8:
                 photo_name = "9"
-            if time_left < 8 and time_left > 8:
+            if time_left < 8 and time_left > 7:
                 photo_name = "8"
-            if time_left < 7 and time_left > 7:
+            if time_left < 7 and time_left > 6:
                 photo_name = "7"
-            if time_left < 6 and time_left > 6:
+            if time_left < 6 and time_left > 5:
                 photo_name = "6"
-            if time_left < 9 and time_left > 5:
+            if time_left < 5 and time_left > 4:
                 photo_name = "5"
-            if time_left < 4 and time_left > 4:
+            if time_left < 4 and time_left > 3:
                 photo_name = "4"
-            if time_left < 3 and time_left > 3:
+            if time_left < 3 and time_left > 2:
                 photo_name = "3"
-            if time_left < 2 and time_left > 2:
+            if time_left < 2 and time_left > 1:
                 photo_name = "2"
-            if time_left < 1 and time_left > 1:
+            if time_left < 1 and time_left > 0:
                 photo_name = "1"
             if time_left < 0:
-                photo_name = "go"    
+                photo_name = "go"
+            else:
+                print("time before start : ",time_left)
 
 
         rospack = rospkg.RosPack()
@@ -78,14 +80,16 @@ class Race_manager:
         cv2_img = self.bridge.imgmsg_to_cv2(image_data, "bgr8")
 
         zone_x = 17
-        zone_y = 10
-        zone_x_size = 10
-        zone_y_size = 20
+        zone_y = 19
+        zone_x_size = 15
+        zone_y_size = 2
 
 
-        seuil = 5
+        seuil = 2
         rouge_gagne = 0
         bleu_gagne = 0
+        min_seuil = 80
+        max_seuil = 150
         for i in range(zone_x_size):
             for j in range(zone_y_size):
                 x = i + zone_x
@@ -94,15 +98,14 @@ class Race_manager:
                 v = cv2_img[x][y][1]
                 r = cv2_img[x][y][2]
                 #print(r,v,b)
-                if b > 50 and r < 20 and v < 20:
+                if b > max_seuil and r < min_seuil and v < min_seuil:
                     bleu_gagne = bleu_gagne +1
-                if r > 50 and b < 20 and v < 20:
+                if r > max_seuil and b < min_seuil and v < min_seuil:
                     rouge_gagne = rouge_gagne +1
 
                 cv2_img[x][y][0] = 0
                 cv2_img[x][y][1] = 0
                 cv2_img[x][y][2] = 255
-
 
         
         if bleu_gagne > seuil :
@@ -132,7 +135,7 @@ class Race_manager:
                 
     def pub_image(self,):
 
-        rate = rospy.Rate(1)
+        rate = rospy.Rate(2)
         self.image_pub = rospy.Publisher("/image_panel", Image, queue_size=1)
         
         while True:

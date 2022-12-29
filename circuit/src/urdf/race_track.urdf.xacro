@@ -4,7 +4,7 @@
 
 
 <!-- <xacro:include filename="$(find circuit)/src/urdf/race_track.gazebo" /> -->
-<xacro:include filename="$(find circuit)/src/urdf/materials.xacro" />
+
 <!-- <xacro:property name="race_track_yaml" value="$(find ${package_name})/src/config/race_track/race_track.yaml" />
 <xacro:property name="race_track_props" value="${load_yaml(race_track_yaml)}"/> -->
 
@@ -173,7 +173,6 @@
       <origin xyz="0 0 0" rpy="0 0 0"/>
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6" />
     </inertial>
-    
   
   </link>
     <joint name="my_joint" type="fixed">
@@ -183,6 +182,8 @@
    <child link="camera_finish"/>
    
    </joint>
+
+
 
 
 
@@ -211,7 +212,7 @@
       </camera>
       <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
         <alwaysOn>true</alwaysOn>
-        <updateRate>0.0</updateRate>
+        <updateRate>10</updateRate>
         <cameraName>/race_track/finish_cam</cameraName>
         <imageTopicName>image_raw</imageTopicName>
         <cameraInfoTopicName>camera_info</cameraInfoTopicName>

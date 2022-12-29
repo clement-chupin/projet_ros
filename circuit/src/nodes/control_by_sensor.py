@@ -19,30 +19,11 @@ class Controlleur:
 
     def call_service(self,):
 
-        # savoir_si_la_course_commence = rospy.ServiceProxy("start_the_race",StartRace)
-        # resp = savoir_si_la_course_commence(bool(False))
-        # self.start = resp.result
-
-        print("call")
-
-    # def show_image(self,img):
-    #     cv2.imshow("Image Window", img)
-    #     cv2.waitKey(3)  
-    # def image_callback(self,img_msg):
-    #  # log some info about the image topic
-    #     rospy.loginfo(img_msg.header)
-    #     img_np = numpy.asarray(img_msg)
-    #     print(img_np)
+        savoir_si_la_course_commence = rospy.ServiceProxy("/circuit/start_the_race",StartRace)
+        resp = savoir_si_la_course_commence()
 
 
-    #     try:
-    #         cv_image = bridge.imgmsg_to_cv2(img_msg, "passthrough")
-    #     except CvBridgeError, e:
-    #         rospy.logerr("CvBridge Error: {0}".format(e))
-
-    #     # Show the converted image
-    #     self.show_image(cv_image)
-
+        self.start = resp.result
  
 
     def move_test(self):
@@ -83,7 +64,7 @@ class Controlleur:
         self.start = True
         
 
-        rospy.init_node("control_the_bot", anonymous=True)
+        rospy.init_node("control_by_sensor", anonymous=True)
 
         self.node_name = rospy.get_name()
 

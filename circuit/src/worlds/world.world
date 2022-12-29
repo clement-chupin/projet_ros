@@ -18,6 +18,24 @@
         <falloff>0</falloff>
       </spot>
     </light>
+    <light name='user_point_light_0' type='spot'>
+      <pose>-2 2.6 0.15 -1.57 0 0</pose> 
+      <diffuse>1.0 1.0 1.0 1</diffuse>
+      <specular>1.0 1.0 1.0 1</specular>
+      <direction>0 0 -1</direction>
+      <attenuation>
+        <range>40</range>
+        <constant>0.5</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <cast_shadows>0</cast_shadows>
+      <spot>
+        <inner_angle>1.5.0</inner_angle>
+        <outer_angle>1.5.0</outer_angle>
+        <falloff>1</falloff>
+      </spot>
+    </light>
     <model name='ground_plane'>
       <static>1</static>
       <link name='link'>
@@ -104,6 +122,9 @@
       </model>
       <light name='sun'>
         <pose>0 0 10 0 -0 0</pose>
+      </light>
+        <light name='user_point_light_0'>
+        <pose>-2 2.6 0.15 -1.57 0 0</pose> 
       </light>
     </state>
     <gui fullscreen='0'>
