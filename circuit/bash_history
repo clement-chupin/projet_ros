@@ -1,0 +1,1094 @@
+ssh meso-hpc2 
+ls
+cd Desktop/
+git
+sudo apt install git
+sudo snap install --classic code
+git clone git@github.com:clement-chupin/BenchNeuralNework.git
+ls
+code
+sudo apt install python~
+sudo apt install python3
+python
+python3
+pip install torch
+sudo apt install python3-pip
+gedit install.shell
+ls
+chmod 777 install.shell 
+./install.shell 
+ssh-keygen 
+code
+ls
+cd BenchNeuralNework/
+git add .
+git commit -m "a"
+git config --global user.email "chupchup2.032@gmail.com"
+git config --global user.name "chupchup"
+git commit -m "a"
+git push origin main
+git push origin master 
+ssh meso-hpc2 
+cat log_propre_cpu 
+code
+gedit ~/.bashrc 
+git add . | git commit -m 'm' | git push origin master
+ls
+git add .
+git commit -m "lol"
+git push origin master 
+ssh meso-hpc2 
+ls
+cd Desktop/BenchNeuralNework/
+git add .
+git commit -m "mm"
+git push origin master 
+git add .
+git commit -m "mm"
+git push origin master 
+cd Desktop/
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece001
+sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt install curl
+cd BenchNeuralNework/
+ls
+cd utils_lib/
+python3 testtt.py 
+cd ../
+gitup 
+gedit ~/.bashrc 
+gitup 
+git add .
+git commit -m "m"
+git push origin master 
+ssh meso-hpc2 
+ls
+rm install.shell 
+ls
+cd Downloads/
+ls
+curl
+curl -s https://raw.githubusercontent.com/ros/rosdistro/master/ros.asc | sudo apt-key add -
+sudo apt update
+sudo apt install ros-noetic-desktop-full
+source /opt/ros/noetic/setup.bash
+roslaunch gazebo_ros willowgarage_world.launch 
+cd Desktop/
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece002
+cd ../
+cd rece002
+ls
+python3 log_lib/view_result.py 
+pip install stable_baselines3
+python3 log_lib/view_result.py 
+cd ..
+cd BenchNeuralNework/
+gitup
+gedit ~/.bashrc 
+alias gitup='git add . ; git commit -m "m" ; git push origin master'
+gitup
+ssh meso-hpc2 
+cd rece003
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+gitup
+ssh meso-h
+ssh meso-hpc2 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece003
+ssh meso-hpc2 
+gitup 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece004
+cd rece004
+ls
+python log_lib/view_result.py 
+python3 log_lib/view_result.py 
+kdir figures
+python3 log_lib/view_result.py 
+cd rece004
+gitup
+python3 log_lib/view_result.py 
+mkdir -p ~/catkin_ws/src
+ls
+cd chupin_ws/
+sudo apt install terminator
+catkin_make
+sudo apt install catkin
+sudo apt-get update
+sudo apt-get install python3-catkin-tools
+catkin_make
+catkin
+catkin make
+sudo reboot
+catkin_init_workspace
+mkdir - p ./chupin_ws/src
+sudo rosdep init
+source /opt/ros/noetic/setup.bash
+sudo rosdep init
+chmod 777 .
+cd control_the_tutle/
+sros
+catkin_make
+cd ../
+source ./devel/setup.bash 
+rosrun control_the_tutle rond.py 
+rostopic list
+sros
+rostopic list
+rostopic echo /turtle1/pose /
+rostopic echo /turtle1/color_sensor
+rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
+  x: 2.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0" 
+rostopic pub /turtle1/cmd_vel geometry_msgs/Twist "linear:
+  x: 2.0
+  y: 1.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0" 
+cd src/
+catkin_create_pkg control_the_tutle
+ls
+cd control_the_tutle/
+ls
+gedit rond.py
+rosrun 
+cd ../
+rosrun control_the_tutle
+rosrun control_the_tutle rond
+rosrun control_the_tutle rond.py
+cd src/
+git clone git@github.com:wilselby/diy_driverless_car_ROS.git
+ls
+cd Desktop/chupin_ws/
+catkin_make
+sudo pip3 install -U catkin_tools
+cd src/
+gedit ~/.bashrc 
+alias sros="source /opt/ros/noetic/setup.bash"
+sros
+catkin_make
+cd ../
+catkin_make
+cd src/
+ls
+roslaunch gazebo_ros 
+sudo apt-get install python-rosinstall
+sudo apt-get install python3-rosinstall
+cd ../~
+
+rosrun turtlesim turtlesim_node 
+sros
+catkin_make
+source devel/setup.bash 
+rosrun control_the_tutle 
+rosrun control_the_tutle rond.py 
+catkin_make
+source devel/setup.bash 
+sros
+roslaunch gazebo_ros 
+catkin_make
+git clone git@github.com:ROBOTIS-GIT/turtlebot3.git
+rosrun turtlebot3 
+sros
+cd ../
+catkin_make
+source devel/setup.bash 
+git clone 
+git clone git@github.com:ros/ros_tutorials.git
+cd ../
+sros
+catkin_make
+roscore
+ls
+cd Desktop/
+ls
+cd chupin_ws/
+ls
+chmod -p 777 .
+chmod -R 777 .
+sros
+source devel/setup.bash 
+catkin_make
+rosrun turtlesim 
+rosrun turtlesim turtlesim_node 
+rosrun turtlebot3_example 
+rosrun turtlebot3_example turtlebot3_obstacle
+rosrun turtlebot3_example turtlebot3_obstacle.launch 
+roslaunch turtlebot3_example turtlebot3_obstacle.launch 
+roslaunch turtlebot3_example turtlebot3_client.launch 
+cd src
+git clone -b kinetic-devel https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+cd ../
+catkin_make
+source devel/setup.
+source devel/setup.bash 
+roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+export TURTLEBOT3_MODEL=burger
+roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
+roslaunch turtlebot3_gazebo turtlebot3_stage_1.launch 
+roslaunch turtlebot3_gazebo turtlebot3_autorace.launch 
+sros
+roscore 
+rostopic
+rostopic list
+roscore
+rosrun gazebo_ros
+rosrun gazebo_ros gazebo 
+rostopic list
+rostopic pub /cmd_vel geometry_msgs/Twist "linear:
+  x: 1.0
+  y: 0.0
+  z: 0.0
+angular:
+  x: 0.0
+  y: 0.0
+  z: 0.0" 
+rostopic echo /scan 
+sros
+source devel/setup.bash 
+rosrun control_the_tutle rond.py 
+roscore 
+gedit a.txt
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+cd Desktop/BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+gitup 
+cd ../
+cd BenchNeuralNework/
+git add .
+git commit -m "m"
+git push origin master 
+git status
+git login
+git --help
+gitup
+git fetch
+gitup
+git rebase origin/master 
+gitup
+gitup 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece005
+cd BenchNeuralNework/
+gitup
+cd rece005
+python log_lib/view_result.py 
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+cd BenchNeuralNework/
+gitup 
+ssh meso-hpc2 
+ex
+cd ../
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece006
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece007
+cd rece007
+python3 log_lib/view_result.py 
+cd rece007
+python3 log_lib/view_result.py 
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+cd BenchNeuralNework/
+gitup 
+ssh meso-hpc2 
+cd ../
+gitup
+cd launch_sbatch/
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece008
+cd BenchNeuralNework/
+gitup 
+chmod -R 777 .
+ls -la
+cd launch_sbatch/
+ls -la
+ssh meso-hpc2 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece009
+cd rece009
+cd rece009
+python3 log_lib/view_result.py 
+cd BenchNeuralNework/
+gitup 
+ssh meso-hpc2 
+cd BenchNeuralNework/
+gitup 
+ssh meso-hpc2 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece010
+cd rece010/
+python3 log_lib/view_result.py 
+cd BenchNeuralNework/
+gitup 
+ssh meso-hpc2 
+cd BenchNeuralNework/
+gitup 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece011
+cd ../
+cd rece011/
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+gitup 
+ssh meso-hpc2 
+cd ../
+cd rece012/
+python3 log_lib/view_result.py 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece012
+cd ../
+cd BenchNeuralNework/
+gitup 
+ssh meso-hpc2 
+cd rece013/
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+gitup 
+cd BenchNeuralNework/
+gitup 
+ssh meso-hpc2 
+cd rece013/
+cd log_meso/
+cat log_propre_cpu 
+ssh meso-
+ssh meso-hpc2 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece013
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece014
+cd ../
+cd rece014
+python3 log_lib/view_result.py 
+cd rece014
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+gitup 
+ssh meso-hpc2 
+cd ../
+cd rece014/
+python3 log_lib/view_result.py 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece015
+cd ../
+cd rece015/
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+cd rece016
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+gitup 
+chmod -R 777 *
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece016
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece017
+cd rece017
+cd log_meso/
+ls
+cat log_propre_cpu 
+cd BenchNeuralNework/
+chmod -R 777 *
+gitup
+gitup 
+cd ../
+cd rece017/
+python3 log_lib/view_result.py 
+ssh meso-hpc2 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece017
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece018
+cd rece018/
+python3 log_lib/view_result.py 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece019
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece020
+cd rece020/
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+cd rece021
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+ls
+gitup
+ssh meso-hpc2 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece021
+cd ../
+cd rece022
+python3 log_lib/view_result.py 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece022
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece023
+mkdire resultat_linaear
+mkdir resultat_linaear
+cd rece023/
+python3 log_lib/view_result.py 
+cd ../
+cd rece023
+python3 log_lib/view_result.py 
+echo install_project.sh
+~/.local/lib/python3.8/site-packages/hiddenlayer/
+cd ~/.local/lib/python3.8/site-packages/hiddenlayer/
+nvidia-smi
+pip install trimesh
+pip install torchvision
+pip install torchviz
+pip install hiddenlayer
+pip install tensorboard
+conda install graphviz python-graphviz
+conda
+pip install graphviz python-graphviz
+pip3 install graphviz
+git clone git@github.com:waleedka/hiddenlayer.git
+cd hiddenlayer
+# Install in dev mode
+pip install -e .
+ls
+pip install onnx
+pip install -e .
+jupyter notebook
+pip install notebook
+jupyter notebook
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+gitup 
+pip install git+https://github.com/waleedka/hiddenlayer.git
+python
+python3
+pip install onnx==1.11.0
+python3
+pip install onnx==1.6.0
+pip show onnx
+pip install onnx==1.7.0
+pip show onnx
+python3
+pip install tensorboard==2.2
+pip show tensorboard
+python3
+pip install hiddenlayer==0.2
+pip install hiddenlayer==0.1
+python3
+pip install hiddenlayer
+pip install hiddenlayer==0.3
+python3
+pip install onnx
+pip install onnx==1.12.0
+pip install hiddenlayer==0.3
+python3
+jupiter notebook
+jupyter notebook
+nt
+cd ../
+cd BenchNeuralNework/
+gitup
+gitup 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece024
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece025
+cd rece025/
+cd log_meso/
+cat log_propre_cpu 
+ssh meso-hpc2 
+cd rece024/
+python3 log_lib/view_result.py 
+cd ../
+cd rece025
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+ls
+gitup
+ssh meso-hpc2 
+cd rece026/
+python3 log_lib/view_result.py 
+python3
+cd BenchNeuralNework/
+gitup 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece026
+clear
+ssh meso-hpc2 
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece027
+cd BenchNeuralNework/
+gitup
+gitup 
+cd ../
+cd rece027/
+python3 log_lib/view_result.py 
+cd ../
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece027
+cd BenchNeuralNework/
+gitdown
+gitup
+cd ../
+cd rece027
+python3 log_lib/view_result.py 
+ssh meso-hpc2 
+cd Desktop/
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece028
+cd rece028
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+gitup
+ssh meso-hpc2 
+cd BenchNeuralNework/
+gitup 
+cd Receive_meso/
+cd Downloads/
+chmod 777 WolframEngine_13.1.0_LINUX.sh 
+./WolframEngine_13.1.0_LINUX.sh 
+sudo ./WolframEngine_13.1.0_LINUX.sh 
+WolframKernel 
+catkin_make
+sros
+catkin_make
+roslaunch circuit 
+source devel/setup.bash 
+roslaunch circuit launch_circuit.launch 
+ssh meso-hpc2 
+gitup
+ssh meso-hpc2 
+cd ../
+cd BenchNeuralNework/
+gitup
+cd Desktop/Receive_meso/
+cd rece017/
+python3 log_lib/view_result.py 
+cd ../
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece029
+cd Desktop/
+cd BenchNeuralNework/
+ls
+gitup
+ssh meso-hpc2 
+cd ../
+cd Receive_meso/
+cd rece029
+python3 log_lib/view_result.py 
+cd ../
+cd BenchNeuralNework/
+ls
+gitup 
+cd Receive_meso/
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece030
+ssh meso-hpc2 
+sudo apt-get install fstl
+fstl track_map.stl 
+chmod 777 sensor_car.py 
+python
+cd Desktop/Receive_meso/
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece031
+cd ../
+cd projet_ros_car/
+sros
+source devel/setup.bash 
+catkin_make
+catkin_make install
+catkin_make 
+roslaunch circuit launch_circuit.launch 
+cat /home/a/.ros/log/b2910bae-7d6d-11ed-b62c-4f3d56819ff5/controleur_1-6*.log
+roslaunch circuit launch_circuit.launch 
+cd ../
+cd BenchNeuralNework/
+ls
+gitup
+cd ../
+cd Downloads/
+fstl head.ply 
+find . .png
+find . -name *png
+flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
+sudo apt install flatpak
+flatpak install https://flathub.org/repo/appstream/org.gimp.GIMP.flatpakref
+gimp
+sudo apt  install gimp
+gimp
+cd Desktop/
+cd projet_ros_car/
+sros
+source devel/setup.bash 
+roslaunch circuit launch_circuit.launch 
+jupyter notebook
+jupyter noteebook
+jupyter notebook
+jupyter notebook
+sros
+ros topic list
+rostopic list
+cd src/
+cd circuit/
+git@github.com:clement-chupin/projet_ros.git
+git init
+git add .
+git commit 
+git commit -m "lol"
+git push origin master
+git remote add origin git@github.com:clement-chupin/projet_ros.git
+git push origin master 
+git push origin main
+git push origin origin/master 
+git branch -m main master
+git fetch origin
+git branch -u origin/master master
+git remote set-head origin -a
+git push origin master 
+git fetch origin
+git push origin master 
+git push origin master --force
+cd ../
+git add circuit/
+git push origin master 
+git commit -m "m"
+git push origin master 
+git push origin master --force
+
+git push origin master --force --al
+git push origin master --force --all
+git push origin master
+git add .
+git commit -m "m"
+git push origin master
+ls
+ls -l
+ls -la
+gedit .gitignore
+git add .
+git rm CMakeLists.txt 
+git add .
+git commit -m "m"
+git push origin master
+cd Desktop/
+cd projet_ros_car/
+sors
+sros
+source devel/setup.bash 
+roslaunch circuit launch_circuit.launch 
+rostopic list
+sros
+rostopic list
+rostopic pub /gazebo/set_link_state gazebo_msgs/LinkState "link_name: 'door'
+pose:
+  position:
+    x: 0.0
+    y: 0.0
+    z: 2.0
+  orientation:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+    w: 0.0
+twist:
+  linear:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+  angular:
+    x: 0.0
+    y: 0.0
+    z: 0.0
+reference_frame: ''" 
+rostopic list
+sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers
+cd Desktop/
+ls
+cd projet_ros_car/
+sros
+source devel/setup.bash 
+roslaunch circuit launch_circuit.launch 
+catkin_make
+catkin_make install
+roslaunch circuit launch_circuit.launch 
+roslaunch gazebo_ros empty_world.launch 
+roslaunch gazebo_ros empty_world.launch --screen
+roslocate gaz
+roslocate 
+roslocate gazebo_ros
+rospack find gazebo_ros
+roslaunch circuit launch_circuit.launch 
+roslaunch gazebo_ros empty_world.launch 
+roslaunch circuit launch_circuit.launch 
+cd ../
+gedit projet_car_install.sh
+cd Desktop/projet_ros_car/
+ls
+sros 
+source devel/setup.bash 
+roslaunch circuit launch_circuit.launch 
+sros
+rviz
+rostopic echo /robot_1/sensor_front_ir 
+cd Desktop/
+ls
+cd projet_ros_car/
+sros
+source devel/setup.bash 
+roslaunch circuit launch_circuit.launch 
+sros
+rostopic list
+clear
+rostopic list
+cat ~/home/a/.ros/log/bb5723fe-7fa7-11ed-9944-47527e025b61/robot_state_publisher-6*.log
+cat /home/a/.ros/log/bb5723fe-7fa7-11ed-9944-47527e025b61/robot_state_publisher-6*.log
+cd /home/a/.ros/log/bb5723fe-7fa7-11ed-9944-47527e025b61/
+rostopic list
+sudo apt-get install python-pip
+rostopic list
+rostopic echo /gazebo/model_states /
+rostopic echo /gazebo/model_states 
+rostopic list
+rostopic pub /image_panel sensor_msgs/Image "header:
+  seq: 0
+  stamp: {secs: 0, nsecs: 0}
+  frame_id: ''
+height: 0
+width: 0
+encoding: ''
+is_bigendian: 0
+step: 0
+data: rostopic listbinary """ 
+rostopic c list
+rostopic list
+rostopic pub /rrbot/joint1_position_controller/command std_msgs/Float64 "data: 5.0" 
+rostopic pub /rrbot/joint1_position_controller/command std_msgs/Float64 "data: 50.0" 
+rostopic list
+cd Desktop/projet_ros_car/
+sros
+source devel/setup.bash 
+roslaunch circuit launch_circuit.launch 
+rospack circuit joint_state_controller
+catkin_make
+roslaunch circuit launch_circuit.launch 
+catkin_make
+roslaunch circuit launch_circuit.launch 
+sudo apt-get install ros-noetic-joint-state-controller
+sudo apt-get install ros-noetic-effort-controllers
+sudo apt-get install ros-noetic-position-controllers
+sudo apt-get install ros-noetic-effort-controllers
+sudo apt autoremove
+sudo apt-get install ros-noetic-effort-controllers
+sudo apt-get install ros-noetic-position-controllers
+sudo apt-get install ros-noetic-joint-state-controller
+sudo apt_get update
+sudo apt-get update
+catkin_make
+roslaunch circuit launch_circuit.launch 
+sudo apt-get install ros-kinetic-gazebo-ros-control
+sudo apt-get install ros-noetic-gazebo-ros-control
+roslaunch circuit launch_circuit.launch 
+sudo apt-get install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
+roslaunch circuit launch_circuit.launch 
+sudo apt-get install ros-noetic-ros-control ros-noetic-ros-controllers
+rosdep check joint_state_controller
+sudo apt-get install python-pip
+sudo pip install -U rosdep
+sudo rosdep init
+rosdep update
+sudo apt-get install python-pip
+sudo apt-get install python3-pip
+sudo pip install -U rosdep
+rosdep update
+rosdep check joint_state_controller
+rosdep check jo
+rosdep check ros-control
+rosdep check gazebo_ros_control
+roslaunch circuit launch_circuit.launch 
+rospack find joint_state_controller 
+roslaunch circuit launch_circuit.launch 
+catkin_make
+roslaunch rrbot_gazebo rrbot_world.launch
+roslaunch circuit launch_circuit.launch 
+roslaunch rrbot_gazebo rrbot_world.launch
+roslaunch circuit launch_circuit.launch 
+sros
+source devel/setup.bash 
+rosrun controller_manager controller_manager
+rosrun controller_manager controller_manager 
+rosrun controller_manager controller_manager load
+rosrun controller_manager controller_manager start
+rosrun controller_manager controller_manager spawn
+rosrun controller_manager controller_manager start
+rosservice list | grep controller_manager
+sudo apt-get update
+sudo apt-get install ros-noetic-gazebo-ros-pkgs ros-noetic-gazebo-ros-control
+roslaunch rrbot_control rrbot_control.launch
+catkin_make
+roslaunch circuit race_track_control.launch 
+roslaunch rrbot_control rrbot_control.launch
+roslaunch circuit race_track_control.launch 
+catkin_make
+roslaunch circuit race_track_control.launch 
+cd projet_ros_car/
+sros
+source devel/setup.bash 
+catkin_make
+oslaunch circui
+roslaunch circuit launch_circuit.launch 
+roslaunch rrbot_gazebo rrbot_world.launch 
+roslaunch circuit launch_circuit.launch 
+catkin_make
+roslaunch circuit rrbot_world.launch 
+sros
+source devel/setup.
+source devel/setup.bash 
+roslaunch circuit race_track_control.launch 
+roslaunch rrbot_control rrbot_control.launch 
+roslaunch circuit race_track_control.launch 
+oslaunch circuit race_track_control.launch 
+roslaunch circuit race_track_control.launch 
+roslaunch circuit rrbot_control.launch 
+sros
+rostopic list
+rostopic pub /
+rostopic pub /rrbot/joint1_position_controller/command std_msgs/Float64 "data: 3.14" 
+rostopic pub /rrbot/joint1_position_controller/command std_msgs/Float64 "data: 0.14" 
+cd Desktop/projet_ros_car/
+sros
+source devel/setup.bash 
+roslaunch circuit rrbot_world.launch 
+sros
+source devel/setup.bash 
+ls
+roslaunch circuit rrbot_control.launch 
+sors
+sros
+rostopic pub /rrbot/joint1_position_controller/command std_msgs/Float64 "data: 1.0" 
+rostopic pub /rrbot/joint1_position_controller/command std_msgs/Float64 "data: 8.0" 
+rostopic pub /rrbot/joint1_position_controller/command std_msgs/Float64 "data: -5.0" 
+rostopic pub /rrbot/joint1_position_controller/command std_msgs/Float64 "data: 0.1" 
+rostopic pub /
+rostopic pub /race_track/joint1_position_controller/command std_msgs/Float64 "data: 1.0" 
+rostopic pub /race_track/joint1_position_controller/command std_msgs/Float64 "data: 0.0" 
+rostopic pub /race_track/joint1_position_controller/command std_msgs/Float64 "data: 1.0" 
+rostopic list 
+sros
+source devel/
+source devel/setup.bash 
+roslaunch circuit rrbot_control.launch 
+roslaunch circuit race_track_control.launch 
+cd Desktop/
+cd projet_ros_car/
+ls
+sros
+source devel/setup.bash 
+roslaunch circuit rrbot_world.launch 
+roslaunch circuit launch_circuit.launch 
+chmod 777 .
+jupyter notebook
+gimp
+sros
+rostopic list 
+sros
+rostopic list
+rostopic pub /race_track/joint1_position_controller/command std_msgs/Float64 "data: 1.0" 
+sros
+source devel/setup.bash 
+rosrun circuit circuit_manager.py 
+rosrun circuit circuit_manager.py -output=screen
+rosrun circuit circuit_manager.py
+rosrun circuit circuit_manager.py -output=screen
+python3
+rosrun circuit circuit_manager.py -output=screen
+rviz
+rosrun circuit circuit_manager.py -output=screen
+roscore
+roscor
+sros
+roscore
+rostopic echo /race
+rostopic echo /race_track/finish_cam/image_raw
+cd Desktop/
+cd projet_ros_car/
+sros
+source devel/setup.bash 
+ls
+roslaunch circuit launch_circuit.launch 
+catkin_make
+chmod -r 777 .
+chmod -r 777 .*
+chmod -r 777 *
+chmod 777 * -r
+chmod 777 *
+chmod 777 .
+chmod -R 777 .
+catkin_make
+rosrun circuit circuit_manager.py 
+rosmake
+catkin_make
+rosrun circuit circuit_manager.py 
+rosbuild
+catkin_make
+sros
+source devel/setup.
+source devel/setup.bash 
+ls
+rosrun circuit circuit_manager.py 
+roslaunch circuit launch_circuit.launch 
+roscore
+roslaunch circuit launch_circuit.launch 
+ls /dev/input/
+sudo jstest /dev/input/js1
+cd Desktop/
+ls
+cd projet_ros_car/
+sros
+source devel/setup.bash 
+sudo jstest /dev/input/js1
+sudo apt-get install ros-noetic-joy
+sudo jstest /dev/input/js1
+rosparam set joy_node/dev "/dev/input/jsX"
+rosparam set joy_node/dev "/dev/input/js1"
+rosrun joy joy_node
+sros
+source devel/setup.bash 
+ls
+rosrun circuit joy_reader.py
+catkin_make
+rosrun circuit joy_reader.py
+source devel/setup.bash 
+catkin_make
+roslaunch circuit launch_circuit_with_joy.launch 
+roslaunch circuit launch_circuit_with_joy.launch output=scree,
+roslaunch circuit launch_circuit_with_joy.launch output=screen
+roslaunch circuit launch_circuit_with_joy.launch -output=screen
+roslaunch circuit launch_circuit_with_joy.launch --output=screen
+roslaunch circuit launch_circuit_with_joy.launch output:=screen
+sros
+roscore
+sros
+source devel/setup.bash 
+catkin_make
+roslaunch circuit joy.launch 
+sudo apt-get install rospack
+pip install rospack
+sudo apt-get install -y rospack-tools
+cd src/circuit/src/nodes/
+chmod 777 .
+ls
+ls -la
+chmod 777 *
+ls -la
+rostopic list
+sor
+sros
+rostopic list 
+rostopic echo /joy 
+cd Desktop/projet_ros_car/
+sros
+source devel/setup.bash 
+ls
+roslaunch circuit launch_circuit_with_joy.launch 
+ls
+catkin_make
+roslaunch circuit launch_circuit_with_joy.launch 
+pip install -U rospkg
+python
+python3
+roslaunch circuit launch_circuit_with_joy.launch 
+cd Desktop/projet_ros_car/
+sros
+source devel/setup.bash 
+roslaunch circuit launch_circuit_with_joy.launch 
+sros
+rviz
+cd ../
+ls
+scp -r clchupin1@meso-hpc2:./IA_chupin/bench_all ./rece032
+cd Desktop/
+jupyter notebook
+source devel/setup.bash 
+rosrun circuit circuit_manager.py 
+cd Desktop/projet_ros_car/
+source devel/setup.bash 
+sros
+roslaunch circuit 
+roslaunch circuit launch_circuit.launch
+catkin_make
+roslaunch circuit 
+sros
+source devel/setup.bash 
+roslaunch circuit launch_circuit.launch 
+cd Desktop/
+cd projet_ros_car/
+source devel/setup.bash 
+oslaunch cir
+roslaunch cir
+roslaunch circuit launch_circuit_with_joy.launch 
+roslaunch circuit launch_circuit_with_joy.launch --screen
+cd Desktop/projet_ros_car/
+source devel/setup.bash 
+roslaunch circuit launch_circuit_with_joy.launch --screen
+gpu_on
+roslaunch circuit launch_circuit_with_joy.launch --screen
+catkin_make
+chmod -R 777 .
+chmod -R 777 *
+catkin_make
+roslaunch circuit launch_circuit.launch 
+roslaunch circuit launch_circuit_with_joy.launch --screen
+cd Desktop/projet_ros_car/
+source devel/setup.bash 
+roslaunch circuit launch_circuit_with_joy.launch --screen
+cd projet_ros_car/
+git add .
+cd src/
+git add .
+git commit -m "version final avec quelques bug"
+git push origin master 
+rosocre
+sros
+roscore
+cd Desktop/projet_ros_car/
+roslaunch circuit launch_circuit_with_joy.launch --screen
+source devel/setup.bash 
+roslaunch circuit launch_circuit_with_joy.launch --screen
+sros
+rqt_graph 
+gedit ~/.bash_history 
+sudo jstest /dev/input/js1
+ls -la /dev/input/by-id/
+sudo jstest /dev/input/js0
+cd Desktop/projet_ros_car/
+source devel/setup.bash 
+roslaunch circuit launch_circuit_with_joy.launch --screen
+roslaunch circuit launch_circuit_solo_test.launch --screen
+gazebo
+roslaunch circuit launch_circuit_solo_test.launch --screen
+roslaunch circuit launch_circuit_solo_with_race_manager_test.launch 
+catkin_make
+roslaunch circuit launch_circuit_full_auto.launch 
+roslaunch circuit launch_circuit_solo_with_race_manager_test.launch 
+roslaunch circuit launch_circuit_full_auto.launch 
+roslaunch circuit launch_circuit_with_joy.launch 
+roslaunch circuit launch_circuit_with_joy.launch --screen
+cd src/
+cd circuit/
+git add .
+git commit -m "correction bug, delai ok, jouable, bug du reset, bug de larret de la course"
+git push origin master 
+cd ../
+roslaunch circuit launch_circuit_with_joy.launch --screen
+sros
+roscore
+rviz
+sros
+rqt_graph 
+gimp
